@@ -1,0 +1,19 @@
+{
+  "name": "sentiment-journal-backend",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cfenv": "1.0.x",
+    "cloudant": "^1.7.1",
+    "express": "4.13.x",
+    "watson-developer-cloud": "^2.29.0"
+  },
+  "repository": {},
+  "engines": {
+    "node": "6.x"
+  }
+}

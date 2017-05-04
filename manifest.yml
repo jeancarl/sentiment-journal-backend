@@ -1,0 +1,18 @@
+declared-services:
+  sentiment-journal-cloudant:
+    label: cloudantNoSQLDB
+    plan: free
+  sentiment-journal-nlu:
+    label: natural-language-understanding
+    plan: free
+applications:
+- name: sentiment-journal-backend
+  path: .
+  memory: 256M
+  instances: 1
+  domain: mybluemix.net
+  host: sentiment-journal-backend
+  disk_quota: 1024M
+  services:
+    - sentiment-journal-cloudant
+    - sentiment-journal-nlu

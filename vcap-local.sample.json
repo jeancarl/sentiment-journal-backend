@@ -1,0 +1,10 @@
+{
+  "services": {
+    "cloudantNoSQLDB": [
+        ...
+    ],
+    "natural-language-understanding": [
+        ...
+    ]
+  }
+}
