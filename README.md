@@ -23,7 +23,7 @@ Note: the `cf` CLI is used in this example to create two IBM Bluemix services an
 
 1. Clone this Git repo locally.
 
-	``` 
+	```
 	git clone https://github.com/jeancarl/sentiment-journal-backend
 	cd sentiment-journal-backend
 	```
@@ -35,7 +35,7 @@ Note: the `cf` CLI is used in this example to create two IBM Bluemix services an
 	```
 
 1. In the next several steps, we'll replace the ... placeholders with credentials for two IBM Bluemix services that will be created/used: a Cloudant NoSQL Database and a Watson Natural Language Understanding service. The contents of this file is a skeleton:
-	
+
 	```
 	{
 	  "services": {
@@ -49,13 +49,13 @@ Note: the `cf` CLI is used in this example to create two IBM Bluemix services an
 	}
 	```
 
-1. Create a Cloudant NoSQL Database service via the `cf` CLI tool: 
+1. Create a Cloudant NoSQL Database service via the `cf` CLI tool:
 
 	```
 	cf create-service cloudantNoSQLDB Lite sentiment-journal-cloudant
 	cf create-service-key sentiment-journal-cloudant Credentials-1
 	cf service-key sentiment-journal-cloudant Credentials-1
-	
+
 	```
 1. Copy the service credential JSON into the first placeholder in the `vcap-local.json` file. Values will be different from those shown below.
 
@@ -63,16 +63,16 @@ Note: the `cf` CLI is used in this example to create two IBM Bluemix services an
 	{
 	  "services": {
 	    "cloudantNoSQLDB": [
-	        {
-				 "host": "a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix.cloudant.com",
-				 "password": "01ab2cde3f4g5h67890i1j2kl34m5no67pq890r1s23456789012tu34v5678w90",
-				 "port": 443,
-				 "url": "https://a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix:01ab2cde3f4g5h67890i1j2kl34m5no67pq890r1s23456789012tu34v5678w90@a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix.cloudant.com",
-				 "username": "a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix"
-			}
+	      {
+	        "host": "a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix.cloudant.com",
+	        "password": "01ab2cde3f4g5h67890i1j2kl34m5no67pq890r1s23456789012tu34v5678w90",
+	        "port": 443,
+	        "url": "https://a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix:01ab2cde3f4g5h67890i1j2kl34m5no67pq890r1s23456789012tu34v5678w90@a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix.cloudant.com",
+	        "username": "a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix"
+	      }
 	    ],
 	    "natural-language-understanding": [
-	        ...
+	      ...
 	    ]
 	  }
 	}
@@ -92,30 +92,30 @@ Note: the `cf` CLI is used in this example to create two IBM Bluemix services an
 	{
 	  "services": {
 	    "cloudantNoSQLDB": [
-	        {
-				 "host": "a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix.cloudant.com",
-				 "password": "01ab2cde3f4g5h67890i1j2kl34m5no67pq890r1s23456789012tu34v5678w90",
-				 "port": 443,
-				 "url": "https://a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix:01ab2cde3f4g5h67890i1j2kl34m5no67pq890r1s23456789012tu34v5678w90@a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix.cloudant.com",
-				 "username": "a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix"
-			}
+	      {
+	        "host": "a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix.cloudant.com",
+	        "password": "01ab2cde3f4g5h67890i1j2kl34m5no67pq890r1s23456789012tu34v5678w90",
+	        "port": 443,
+	        "url": "https://a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix:01ab2cde3f4g5h67890i1j2kl34m5no67pq890r1s23456789012tu34v5678w90@a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix.cloudant.com",
+	        "username": "a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix"
+	      }
 	    ],
 	    "natural-language-understanding": [
-	        {
-				 "password": "012A3bcDE45F",
-				 "url": "https://gateway.watsonplatform.net/natural-language-understanding/api",
-				 "username": "0a123b4c-d567-890e-f123-4gh5ij678kl9"
-			}
+	      {
+	        "password": "012A3bcDE45F",
+	        "url": "https://gateway.watsonplatform.net/natural-language-understanding/api",
+	        "username": "0a123b4c-d567-890e-f123-4gh5ij678kl9"
+	      }
 	    ]
 	  }
-	}
+	}	
 	```
 1. Install the necessary NPM dependencies:
 
 	```
 	npm install
 	```
-	
+
 1. Run the application:
 
 	```
@@ -139,8 +139,8 @@ The Continious Delivery Toolchain in IBM Bluemix uses a Git repo and other compo
 1. Click on the `Delivery Pipeline` icon. Choose an app name and the region, organization, space where you want to deploy this application. Click Create.
 
 	![](assets/cddeliverypipeline.png)
-	
-	
+
+
 1. Click on the `Deploy` tile. When the two stages are completed (green), a mybluemix.net application URL should be displayed under the Last Execution Result section. Click on the application URL to access the application.
 
 	![](assets/cdoverview.png)
@@ -162,14 +162,14 @@ This application can also be pushed via the Cloud Foundry CLI. Ensure you have t
 	git clone https://github.com/jeancarl/sentiment-journal-backend
 	cd sentiment-journal-backend
 	```
-	
-1. Create a Cloudant NoSQL Database service via the `cf` CLI tool: 
+
+1. Create a Cloudant NoSQL Database service via the `cf` CLI tool:
 
 	```
 	cf create-service cloudantNoSQLDB Lite sentiment-journal-cloudant
 	cf create-service-key sentiment-journal-cloudant Credentials-1
-	```	
-	
+	```
+
 1. Create a Watson Natural Language Understanding service via the `cf` CLI tool.
 
 	```
@@ -177,10 +177,10 @@ This application can also be pushed via the Cloud Foundry CLI. Ensure you have t
 	cf create-service-key sentiment-journal-nlu Credentials-1
 	```
 
-1. Open the `manifest.yml` file. Two declared services, a Cloudant NoSQL database and a Watson Natural Language Understanding service, will be bound to when the application is deployed. 
+1. Open the `manifest.yml` file. Two declared services, a Cloudant NoSQL database and a Watson Natural Language Understanding service, will be bound to when the application is deployed.
 
 	You can also change the name of the application, how much memory, and the host and domain of the application.
-	
+
 	```
 	applications:
 	- name: sentiment-journal-backend
@@ -194,13 +194,13 @@ This application can also be pushed via the Cloud Foundry CLI. Ensure you have t
 	    - sentiment-journal-cloudant
 	    - sentiment-journal-nlu
 	```
-		
+
 1. Push the application to IBM Bluemix.
 
 	```
 	cf push
 	```
-	
+
 ## Manually calling the API endpoints
 
 #### What base URL do I use?
@@ -213,7 +213,7 @@ This application can also be pushed via the Cloud Foundry CLI. Ensure you have t
 1. Test out the API endpoint to get a list of journal entries. Append `/api/items` to the end of the base URL. For example, if the application URL was `https://myapp.mybluemix.net`, the API endpoint would be `https://myapp.mybluemix.net/api/items`
 
 	Since there are no items in the database yet, the endpoint should return an empty JSON array.
-	
+
 	```
 	[]
 	```
@@ -224,7 +224,7 @@ This application can also be pushed via the Cloud Foundry CLI. Ensure you have t
 	POST http://myapp.mybluemix.net/api/items
 	text=this+is+a+test
 	```
-	
+
 	The JSON response will contain the sentiment analysis returned by the Watson Natural Language Understanding service.
 
 	```
@@ -237,7 +237,7 @@ This application can also be pushed via the Cloud Foundry CLI. Ensure you have t
 	  "id": "fc6664d482170f26285d0f78de58270b"
 	}
 	```
-	
+
 ## API Endpoints
 
 This section describes the API endpoints exposed by this Node.js application.
@@ -274,7 +274,7 @@ Example Response (JSON):
 	  },
 	  "id": "3f08b8fada76808cccaf90e234a78b3a"
 	}]
-	
+
 | Property | Type | Description |
 |-----------|------|-------------|
 | text | string | journal text that is analyzed for sentiment |
@@ -291,8 +291,8 @@ Analyze a new entry and add it to the journal.
 |-----------|------|-------------|
 | text | string | journal text that is analyzed for sentiment |
 
-Example Response (JSON): 
-	
+Example Response (JSON):
+
 	{
 	  "text": "this is an awesome demo",
 	  "sentiment": {
@@ -301,7 +301,7 @@ Example Response (JSON):
 	  },
 	  "id": "eeb326cf3b13655af11c3828d059a36e"
 	}
-	
+
 | Property | Type | Description |
 |-----------|------|-------------|
 | text | string | journal text that is analyzed for sentiment |
@@ -309,4 +309,3 @@ Example Response (JSON):
 | sentiment.score | number | sentiment score from Watson Natural Language Understanding service |
 | sentiment.label | string | label of sentiment from Watson Natural Language Understanding service |
 | id | string | Cloudant document ID |
-
