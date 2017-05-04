@@ -40,10 +40,18 @@ Note: the `cf` CLI is used in this example to create two IBM Bluemix services an
 	{
 	  "services": {
 	    "cloudantNoSQLDB": [
-	        ...
+				{
+					"credentials": {
+						...
+					}
+				}
 	    ],
 	    "natural-language-understanding": [
-	        ...
+				{
+					"credentials": {
+						...
+					}
+				}
 	    ]
 	  }
 	}
@@ -64,15 +72,21 @@ Note: the `cf` CLI is used in this example to create two IBM Bluemix services an
 	  "services": {
 	    "cloudantNoSQLDB": [
 	      {
-	        "host": "a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix.cloudant.com",
-	        "password": "01ab2cde3f4g5h67890i1j2kl34m5no67pq890r1s23456789012tu34v5678w90",
-	        "port": 443,
-	        "url": "https://a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix:01ab2cde3f4g5h67890i1j2kl34m5no67pq890r1s23456789012tu34v5678w90@a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix.cloudant.com",
-	        "username": "a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix"
+					"credentials": {
+						"host": "a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix.cloudant.com",
+						"password": "01ab2cde3f4g5h67890i1j2kl34m5no67pq890r1s23456789012tu34v5678w90",
+						"port": 443,
+						"url": "https://a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix:01ab2cde3f4g5h67890i1j2kl34m5no67pq890r1s23456789012tu34v5678w90@a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix.cloudant.com",
+						"username": "a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix"
+					}
 	      }
 	    ],
 	    "natural-language-understanding": [
-	      ...
+	      {
+					"credentials": {
+						...
+					}
+				}
 	    ]
 	  }
 	}
@@ -93,18 +107,22 @@ Note: the `cf` CLI is used in this example to create two IBM Bluemix services an
 	  "services": {
 	    "cloudantNoSQLDB": [
 	      {
-	        "host": "a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix.cloudant.com",
-	        "password": "01ab2cde3f4g5h67890i1j2kl34m5no67pq890r1s23456789012tu34v5678w90",
-	        "port": 443,
-	        "url": "https://a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix:01ab2cde3f4g5h67890i1j2kl34m5no67pq890r1s23456789012tu34v5678w90@a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix.cloudant.com",
-	        "username": "a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix"
+	        "credentials": {
+						"host": "a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix.cloudant.com",
+						"password": "01ab2cde3f4g5h67890i1j2kl34m5no67pq890r1s23456789012tu34v5678w90",
+						"port": 443,
+						"url": "https://a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix:01ab2cde3f4g5h67890i1j2kl34m5no67pq890r1s23456789012tu34v5678w90@a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix.cloudant.com",
+						"username": "a0123b4c-d5e6-7feg-hijk-890lm12n34op-bluemix"
+					}
 	      }
 	    ],
 	    "natural-language-understanding": [
 	      {
-	        "password": "012A3bcDE45F",
-	        "url": "https://gateway.watsonplatform.net/natural-language-understanding/api",
-	        "username": "0a123b4c-d567-890e-f123-4gh5ij678kl9"
+	        "credentials": {
+						"password": "012A3bcDE45F",
+	          "url": "https://gateway.watsonplatform.net/natural-language-understanding/api",
+	          "username": "0a123b4c-d567-890e-f123-4gh5ij678kl9"
+					}
 	      }
 	    ]
 	  }

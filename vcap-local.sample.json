@@ -1,10 +1,18 @@
 {
   "services": {
     "cloudantNoSQLDB": [
-        ...
+      {
+        "credentials": {
+          ...
+        }
+      }
     ],
     "natural-language-understanding": [
-        ...
+      {
+        "credentials": {
+          ...
+        }
+      }
     ]
   }
 }
